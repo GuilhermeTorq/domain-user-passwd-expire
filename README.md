@@ -1,6 +1,8 @@
 # domain-user-passwd-expire
 This script send a notification via email to each user that has its domain user password almost expiring, the default days left are in 0, 1, 5, 10 days but you can set to however day you want, it can be anywhere between 0 and 999+ days remaining.
 
+!! You have to change the smtpServer, smtpPort AND the sender email
+
 > Coding language: English | EN  
 > User displayed language default: Portuguese | PT  
 > User displayed language: Basic changes to email body for another language bellow
