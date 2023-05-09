@@ -12,7 +12,7 @@ The script will run the command:
 $userInfo = Get-ADUser -filter {Enabled -eq $True -and PasswordNeverExpires -eq $False} –Properties "DisplayName", "mail", "msDS-UserPasswordExpiryTimeComputed" |
 Select-Object -Property "DisplayName","Mail",@{Name="ExpiryDate";Expression={[datetime]::FromFileTime($_."msDS-UserPasswordExpiryTimeComputed")}}, mail
 ```
-Wich will get the name, email and password expire date of the domain users, the file "userdata.txt" that I made available is an example of the output this command gets and works with.  
+Which will get the name, email and password expire date of the domain users, the file "userdata.txt" that I made available is an example of the output this command gets and works with.  
 
 Before working with that information, it will be cleaned first as to remove unnecessary spaces to dodge errors, so you can edit the expire dates for testing without worring about the format.
 The script always checks for the time on the computer/domain it is being run on.
