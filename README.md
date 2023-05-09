@@ -14,7 +14,7 @@ The script right off the bat will work with a file I named and made available "u
 The script will run the command:
 ```
 $userInfo = Get-ADUser -filter {Enabled -eq $True -and PasswordNeverExpires -eq $False} –Properties "DisplayName", "mail", "msDS-UserPasswordExpiryTimeComputed" |
-Select-Object -Property "DisplayName","Mail",@{Name="ExpiryDate";Expression={[datetime]::FromFileTime($_."msDS-UserPasswordExpiryTimeComputed")}}, mail
+Select-Object -Property "DisplayName","Mail",@{Name="ExpiryDate";Expression={[datetime]::FromFileTime($_."msDS-UserPasswordExpiryTimeComputed")}}
 ```
 Which will get the name, email and password expire date of the domain users, the file "userdata.txt" that I made available is an example of the output this command gets and works with.  
 
