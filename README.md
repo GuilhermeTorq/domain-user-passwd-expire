@@ -7,6 +7,10 @@ This script send a notification via email to each user that has its domain user 
 > User displayed language default: Portuguese | PT  
 > User displayed language: Basic changes to email body for another language bellow
 
+
+The script right off the bat will work with a file I named and made available "userdata.txt" so that you can test with it. But to use the information of the actual server you will have to delete or comment the line 34 & 35 and UNCOMMENT the line 28 and 31  
+!! Check line 33
+
 The script will run the command:
 ```
 $userInfo = Get-ADUser -filter {Enabled -eq $True -and PasswordNeverExpires -eq $False} –Properties "DisplayName", "mail", "msDS-UserPasswordExpiryTimeComputed" |
