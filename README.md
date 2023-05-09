@@ -36,6 +36,17 @@ switch ($duration.Days)
 > Now, if you want to add or remove days, you just have to delete that line OR add another and you only need to change the first and last number
 
 ### How to change language on email body and smtp
-SMTP:
-On lines 13 and 14 change the smtpport and the smtpserver to the one your network administrator gave you. Also check the documentation https://support.smartbear.com/swaggerhub/docs/enterprise/v1/config/smtp.html
-[smartbear config/smtp]([https://pages.github.com/](https://support.smartbear.com/swaggerhub/docs/enterprise/v1/config/smtp.html))
+Do NOT change anything that follows the symbol $  
+
+You have to change the "from" email address on line 10  
+
+SMTP:  
+On lines 13 and 14 change the smtpport and the smtpserver to the one your network administrator gave you. Also check the documentation - [Smartbear config/smtp](https://support.smartbear.com/swaggerhub/docs/enterprise/v1/config/smtp.html)  
+
+Email body:  
+On line 8, you can change the body to any format you want, just remember that to add a newline, you have to add in between: \`n  
+If you want a direct translation from what is there by default, just replace the whole line with:  
+```
+line 8: $emailBody = "\`n\`n!Warning Alert!\`n\`nUser password will expire on $date ($days days)\`n\`nUser: $username\`nEmail: $mail\`n\`nYours sincerely,\`nServer\`n\`n"  
+line 12: $subject = "Your user password will expire in $days days!"
+```
