@@ -26,8 +26,8 @@ Clear Host
 
 #Grab filtered users password expiration date and name
 <#
-$userInfo = Get-ADUser -filter {Enabled -eq $True -and PasswordNeverExpires -eq $False} –Properties "DisplayName", "mail", "msDS-UserPasswordExpiryTimeComputed" |
-Select-Object -Property "DisplayName","Mail",@{Name="ExpiryDate";Expression={[datetime]::FromFileTime($_."msDS-UserPasswordExpiryTimeComputed")}}, mail
+$userInfo = Get-ADUser -filter {Enabled -eq $True -and PasswordNeverExpires -eq $False} â€“Properties "DisplayName", "mail", "msDS-UserPasswordExpiryTimeComputed" |
+Select-Object -Property "DisplayName","Mail",@{Name="ExpiryDate";Expression={[datetime]::FromFileTime($_."msDS-UserPasswordExpiryTimeComputed")}}
 #>
 
 # The lines 34 & 35 are only for a simulation, delete 34 & 35 when ready and uncomment line 28 and 31 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -65,7 +65,7 @@ foreach($line in $userInfo)
 
 if(!$varCheck)
 {
-    Write-Host "`nScript Terminado... Não existe nenhuma password a expirar nos proximos 10, 5, 1, 0 dias exatamente!`n"
+    Write-Host "`nScript Terminado... NÃ£o existe nenhuma password a expirar nos proximos 10, 5, 1, 0 dias exatamente!`n"
     exit
 }
 
