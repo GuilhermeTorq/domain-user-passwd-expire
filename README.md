@@ -1,7 +1,7 @@
 # domain-user-passwd-expire
 This script send a notification via email to each user that has its domain user password almost expiring, the default days left are in 0, 1, 5, 10 days but you can set to however day you want, it can be anywhere between 0 and 999+ days remaining.
 
-!! You have to change the smtpServer, smtpPort AND the sender email
+!! You have to change the smtpServer, smtpPort AND the sender email - check how bellow !!
 
 > Coding language: English | EN  
 > User displayed language default: Portuguese | PT  
@@ -35,4 +35,7 @@ switch ($duration.Days)
 
 > Now, if you want to add or remove days, you just have to delete that line OR add another and you only need to change the first and last number
 
-### How to change language on email body
+### How to change language on email body and smtp
+SMTP:
+On lines 13 and 14 change the smtpport and the smtpserver to the one your network administrator gave you. Also check the documentation https://support.smartbear.com/swaggerhub/docs/enterprise/v1/config/smtp.html
+[smartbear config/smtp]([https://pages.github.com/](https://support.smartbear.com/swaggerhub/docs/enterprise/v1/config/smtp.html))
