@@ -18,7 +18,7 @@ Select-Object -Property "DisplayName","Mail",@{Name="ExpiryDate";Expression={[da
 ```
 Which will get the name, email and password expire date of the domain users, the file "userdata.txt" that I made available is an example of the output this command gets and works with.  
 
-Before working with that information, it will be cleaned first as to remove unnecessary spaces to dodge errors, so you can edit the expire dates for testing without worring about the format.
+Before working with that information, it will be cleaned first as to remove unnecessary spaces to dodge errors, so you can edit the expire dates for testing without worring about the format on the file "userdata.txt" (dd/MM/yyyy)  
 The script always checks for the time on the computer/domain it is being run on.
 
 With the informationg grabbed, it will then filter out only the informationg with dates and check how manys days from now to the expire date, if the number is equal to any of the ones in the switch code, it will grab that user information and send an email to him.
